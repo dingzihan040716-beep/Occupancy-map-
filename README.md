@@ -21,7 +21,7 @@ Room: 122cm wide hallway, sensor 55cm from left wall, front wall at 201cm.
 |-------|-------------|
 | 1 | Suitcase |
 | 2 | Mirror |
-| 3 | Mirror + Suitcase |
+
 
 Each scene tested under **light** and **dark** conditions. Camera additionally tested with/without IR projector.
 
@@ -32,8 +32,8 @@ Each scene tested under **light** and **dark** conditions. Camera additionally t
 | Scene | Radar light | Camera light | Radar Dark | Camera Dark | GT |
 |:-----:|:---------:|:----------:|:--:|:-------------:|:--------------:|
 | 1 — Suitcase | <img src="assests/radar_light_suitcase.png" width="500"> | <img src="assests/cam_light_suitcase.png" width="500" >  | <img src="assests/radar_dark_suitcase.png" width="500" > | <img src="assests/cam_dark_suitcase.png" width="500" height="1000"> | <img src="assests/GT_suitcase.png" width="500" > |
-| 2 — Mirror | ![radar_bev_s2](assets/placeholder.png) | ![cam_bev_s2](assets/placeholder.png) | ![gt_s2](assets/placeholder.png) | ![radar_overlay_s2](assets/placeholder.png) | ![cam_overlay_s2](assets/placeholder.png) |
-| 3 — Mirror + Suitcase | ![radar_bev_s3](assets/placeholder.png) | ![cam_bev_s3](assets/placeholder.png) | ![gt_s3](assets/placeholder.png) | ![radar_overlay_s3](assets/placeholder.png) | ![cam_overlay_s3](assets/placeholder.png) |
+| 2 — Mirror | <img src="assests/radar_dark_mirror.png" width="500"> | <img src="assests/radar_dark_mirror.png" width="500"> | <img src="assests/radar_dark_mirror.png" width="500"> | <img src="assests/radar_dark_mirror.png" width="500"> |<img src="assests/GT_mirror.png" width="500"> |
+
 
 ### Grid-level Metrics
 
@@ -57,59 +57,3 @@ Each scene tested under **light** and **dark** conditions. Camera additionally t
 | 3 | Radar  | — | — | — | — |
 | 3 | Camera | — | — | — | — |
 
-## Pipeline
-
-### Radar
-
-```
-.dat file → parse TLV8 → Capon/Bartlett beamforming → threshold detection
-  → polar to Cartesian → rasterize to BEV grid
-    → cleanup (remove small blobs + Closing)
-      → convex hull fill (bridge nearby arcs → fill interior)
-        → DBSCAN clustering → evaluation against GT
-```
-
-### Camera
-
-```
-.bag file → read depth frames → back-project to 3D point cloud
-  → height filter + ROI → project to 2D BEV
-    → multi-frame fusion (keep cells seen in ≥K of N frames)
-      → regional Closing + fill_holes (seal gaps → fill enclosed areas)
-        → DBSCAN clustering → evaluation against GT
-```
-
-## Files
-
-| File | Description |
-|------|-------------|
-| `radar_bev_Eval_v2_5.py` | Radar evaluation (with convex hull fill) |
-| `radar_nofilling.py` | Radar evaluation (no fill, Capon/Bartlett switch) |
-| `depth_bev_Eval_v2_1_10_2.py` | Camera evaluation (with regional fill) |
-| `radar_Range_heatmaps.py` | Beamforming visualization (FFT / Bartlett / Capon) |
-
-## Usage
-
-Change the variables at the top of each file to select a scene:
-
-```python
-# Radar
-SCENE    = 1            # 1=object, 2=mirror, 3=mirror+object
-LIGHTING = "light"      # "light" or "dark"
-
-# Camera
-SCENE    = 1
-LIGHTING = "light"
-DEVICE   = "laser"      # "laser" or "nolaser"
-```
-
-```bash
-py -3.12 radar_bev_Eval_v2_5.py
-py -3.12 depth_bev_Eval_v2_1_10_2.py
-```
-
-## Dependencies
-
-- Python 3.12
-- numpy, scipy, matplotlib, scikit-learn
-- rosbags (for camera .bag file reading)

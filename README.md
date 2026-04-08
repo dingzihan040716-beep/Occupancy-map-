@@ -37,14 +37,18 @@ Each scene tested under **light** and **dark** conditions. Camera additionally t
 
 ### Grid-level Metrics
 
-| Scene | Sensor | IoU | Precision | Recall | F1 |
-|:-----:|:------:|:---:|:---------:|:------:|:--:|
-| 1 | Radar  | — | — | — | — |
-| 1 | Camera | — | — | — | — |
-| 2 | Radar  | — | — | — | — |
-| 2 | Camera | — | — | — | — |
-| 3 | Radar  | — | — | — | — |
-| 3 | Camera | — | — | — | — |
+| Scene | Light | Sensor | IoU | Precision | Recall | F1 |
+|:-----:|:------:|:---:|:---------:|:------:|:--:|:--:|
+| 1 | light | Radar  | — | — | — | — |
+| 1 | light | Camera | — | — | — | — |
+| 1 | dark  | Radar  | — | — | — | — |
+| 1 | dark  | Camera | 0.1485 | 0.4790 | 0.1771 | 0.2586 |
+| 2 | light | Radar  | 0.0046 | 0.1250 | 0.0048 | 0.0092 |
+| 2 | light | Camera | 0.1544 | 0.2869 | 0.2506 | 0.2676 | 
+| 2 | dark  | Radar  | — | — | — | — |
+| 2 | dark  | Camera | — | — | — | — |
+| 3 | light | Radar  | — | — | — | — |
+| 3 | light | Camera | — | — | — | — |
 
 ### Cluster-level Metrics
 

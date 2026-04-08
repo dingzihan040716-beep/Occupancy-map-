@@ -31,7 +31,7 @@ Each scene tested under **light** and **dark** conditions. Camera additionally t
 
 | Scene | Radar light | Camera light | Radar Dark | Camera Dark | GT |
 |:-----:|:---------:|:----------:|:--:|:-------------:|:--------------:|
-| 1 — Suitcase | ![radar_bev_s1](assets/placeholder.png) | ![cam_bev_s1](assests/cam_light_suitcase.png) | ![gt_s1](assets/placeholder.png) | ![radar_overlay_s1](assests/cam_dark_suitcase.png) | ![cam_overlay_s1](assets/placeholder.png) |
+| 1 — Suitcase | ![radar_bev_s1](assests/radar_light_suitcase.png) | ![cam_bev_s1](assests/cam_light_suitcase.png) | ![gt_s1](assets/placeholder.png) | ![radar_overlay_s1](assests/cam_dark_suitcase.png) | ![cam_overlay_s1](assets/placeholder.png) |
 | 2 — Mirror | ![radar_bev_s2](assets/placeholder.png) | ![cam_bev_s2](assets/placeholder.png) | ![gt_s2](assets/placeholder.png) | ![radar_overlay_s2](assets/placeholder.png) | ![cam_overlay_s2](assets/placeholder.png) |
 | 3 — Mirror + Suitcase | ![radar_bev_s3](assets/placeholder.png) | ![cam_bev_s3](assets/placeholder.png) | ![gt_s3](assets/placeholder.png) | ![radar_overlay_s3](assets/placeholder.png) | ![cam_overlay_s3](assets/placeholder.png) |
 

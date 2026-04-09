@@ -39,25 +39,25 @@ Each scene tested under **light** and **dark** conditions. Camera additionally t
 
 | Scene | Light | Sensor | IoU | Precision | Recall | F1 |
 |:-----:|:------:|:---:|:---------:|:------:|:--:|:--:|
-| 1 | light | Radar  | — | — | — | — |
-| 1 | light | Camera | — | — | — | — |
-| 1 | dark  | Radar  | — | — | — | — |
+| 1 | light | Radar  | 0.0350	| 0.2845 | 0.0383 | 0.0676 |
+| 1 | light | Camera | 0.2254 | 0.6837 | 0.2516 | 0.3678 |
+| 1 | dark  | Radar  | 0.0351	| 0.2795 | 0.0386 | 0.0679 |
 | 1 | dark  | Camera | 0.1485 | 0.4790 | 0.1771 | 0.2586 |
 | 2 | light | Radar  | 0.0046 | 0.1250 | 0.0048 | 0.0092 |
 | 2 | light | Camera | 0.1544 | 0.2869 | 0.2506 | 0.2676 | 
-| 2 | dark  | Radar  | — | — | — | — |
-| 2 | dark  | Camera | — | — | — | — |
-| 3 | light | Radar  | — | — | — | — |
-| 3 | light | Camera | — | — | — | — |
+| 2 | dark  | Radar  | 0.0046 | 0.1232 | 0.0048 | 0.0092 |
+| 2 | dark  | Camera | 0.0888 | 0.4192 | 0.1013 | 0.1632 |
+| 3 | light | Radar  | 0.1487 | 0.5379 | 0.1705 | 0.2589 |
+| 3 | light | Camera | 0.2810 | 0.8944 | 0.2906 | 0.4387 |
 
 ### Cluster-level Metrics
 
 | Scene | Sensor | Hungarian Mean Error (m) | OSPA (m) | OSPA_loc | OSPA_card |
 |:-----:|:------:|:------------------------:|:--------:|:--------:|:---------:|
-| 1 | Radar  | — | — | — | — |
-| 1 | Camera | — | — | — | — |
-| 2 | Radar  | — | — | — | — |
-| 2 | Camera | — | — | — | — |
-| 3 | Radar  | — | — | — | — |
-| 3 | Camera | — | — | — | — |
+| 1 | Radar  | 0.1165 | 0.1165 | 0.1165 | 0 |
+| 1 | Camera | 0.0821 | 0.0821 | 0.0821 | 0 |
+| 2 | Radar  | —      | 0.1179 | 0.1179 | 0 |
+| 2 | Camera | —      | 0.1500 | 0.0866 | 0.1225 |
+| 3 | Radar  | —      | 0.0679 | 0.0679 | 0 |
+| 3 | Camera | —      | 0.0728 | 0.0728 | 0|
 

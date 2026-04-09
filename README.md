@@ -33,6 +33,7 @@ Each scene tested under **light** and **dark** conditions. Camera additionally t
 |:-----:|:---------:|:----------:|:--:|:-------------:|:--------------:|
 | 1 — Suitcase | <img src="assests/radar_light_suitcase.png" width="500"> | <img src="assests/cam_light_suitcase.png" width="500" >  | <img src="assests/radar_dark_suitcase.png" width="500" > | <img src="assests/cam_dark_suitcase.png" width="500" height="1000"> | <img src="assests/GT_suitcase.png" width="500" > |
 | 2 — Mirror | <img src="assests/radar_light_mirror.png" width="500"> | <img src="assests/cam_light_mirror.png" width="500"> | <img src="assests/radar_dark_mirror.png" width="500"> | <img src="assests/cam_dark_mirror.png" width="500"> |<img src="assests/GT_mirror.png" width="500"> |
+| 3 — Suitcase(OutDoor) | <img src="assests/radar_outdoor.png" width="500"> | <img src="assests/cam_outdoor.png" width="500"> |          |         |<img src="assests/GT_outdoor.png" width="500">  |
 
 
 ### Grid-level Metrics

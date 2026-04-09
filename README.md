@@ -19,9 +19,9 @@ Room: 122cm wide hallway, sensor 55cm from left wall, front wall at 201cm.
 
 | Scene | Description |
 |-------|-------------|
-| 1 | Suitcase |
+| 1 | Suitcase (indoor)  |
 | 2 | Mirror |
-
+| 3 | Suitcase (outdoor) |
 
 Each scene tested under **light** and **dark** conditions. Camera additionally tested with/without IR projector.
 
